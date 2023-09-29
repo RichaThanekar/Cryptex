@@ -1,0 +1,522 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #eaeef2;
+}
+
+
+
+.header{
+    background:linear-gradient(to right, #05161a,#0f434f);
+    height: 80px;
+    
+}
+.logo{
+    margin-right: 5%;
+}
+nav{
+    display: flex;
+    padding: 1% 1%;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,0,0,0.2);  
+}
+
+.nav-links{
+    flex: 1;
+    text-align: center;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: 'Raleway', sans-serif;
+}
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height:2px;
+    background: #0c7073;
+    display: block;
+    margin: auto;
+    transition: 0.2s;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+.primary{
+    transition: all .5s ease;
+    color: #fff;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'PT Serif', serif;
+    text-transform: uppercase;
+    line-height: 1;
+    font-size: 15px;
+    background-color : transparent;
+    padding: 10px;
+    outline: none;
+    text-decoration: none;
+    border: 1px solid ;
+    border-radius: 4rem;       
+}
+.primary:hover {
+    color: #001F3F;
+    background-color: #fff;
+}
+.login-register{
+    display: flex;
+    flex-direction: row;
+}
+.login-register ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.login-register ul li a{
+    
+    text-decoration: none;
+    font-size: 15px;
+    font-family: 'Raleway', sans-serif;
+}
+/*.Register{
+    text-decoration: none;
+    border: 1px solid ;
+    border-radius: 10px; 
+    padding: 10px;
+    background-color: #4191a3;
+    color: #05161a;
+    outline: none;
+    cursor: pointer;
+}
+
+/*HOME*/
+.HOME{
+    background-image: url(images/bg.jpg);
+    min-height: 100vh;
+    width: 100%;
+    background-size: cover;
+    display: flex;
+    
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: last baseline;
+    justify-content: center;
+    
+}
+
+.info h1{
+    font-size: 40px;
+    color: #ffffff;
+    padding: 10px;
+    
+}
+.info p{
+    font-size: 15px;
+    color: #ffffff; 
+    padding: 12px;
+    width: 500px;
+}
+
+
+
+/*Trending Coins*/
+.market{
+    background-color: #001F3F;
+    
+   
+}
+.tab-content{
+    display: flex;
+    justify-content: space-between;
+}
+.card-analytics{
+    color: white;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.trending{
+    color: #3bb6d4;
+    font-family: 'Kanit', sans-serif;
+    font-size: 30px;
+    margin-top: 1px;
+    text-align: center;
+}
+
+.trending-coins {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 20px;
+}
+
+
+.logo{
+    display: flex;
+    margin: 0px 0px 0px;
+    padding: 0px 0px 0px;
+}
+.coin {
+    background-color: #fff;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    
+}
+
+.coin:hover {
+    background-color: #9becee;
+    transform: scale(1.05);
+}
+
+
+/* Optional: Add a scrollbar */
+.trending-coins::-webkit-scrollbar {
+    height: 8px;
+}
+
+.trending-coins::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+.value{
+    align-items: flex-end;
+}
+
+
+
+/*Footer*/
+footer{
+    width: 100%;
+    position: absolute;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: linear-gradient(to right, #05161a, #0f434f);
+    color: #fff;
+    padding: 100px 0 30px;
+    
+    font-size: 13px;
+    line-height: 20px;
+}
+.row{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.col{
+    flex-basis: 25%;
+    padding: 10px;
+    justify-content: right;
+
+}
+
+.logo{
+    width: 80px;
+    margin-bottom: 30px;
+}
+.col h3{
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+}
+.email-id{
+    width: fit-content;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0;
+}
+ul li{
+    list-style: none;
+    margin-bottom: 12px;
+}
+ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+
+/*Latest news*/
+.latest-news{
+    background-color:#001F3F;
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    color: white;
+    
+}
+.news{
+    display: flex;
+    justify-content: space-between;
+}
+.news p{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+    padding: 30px;
+    color:  #6ecde2;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: 'Raleway', sans-serif;
+}
+.latest-news p{
+    padding: 10px;
+}
+
+
+
+
+
+/*cryptoprices*/
+.table_header{
+    background-color: #aeebed;
+    font-family: 'Kanit', sans-serif;
+    line-height: 1.5;
+}
+td img{
+    width: 36px;
+    height: 36px;
+    margin-right: .5rem;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+table,th,td{
+    border-collapse: collapse;
+    padding: 1rem;
+    text-align: left;
+}
+
+.table_header{
+    width: 100%;
+    height: 10%;
+    background-color: #fff4;
+    padding: .8rem 1rem;
+}
+.table_body{
+    width: 95%;
+    max-height: calc(89% - 1.6rem);
+    background-color: #fffb;
+    margin:.8rem auto;
+    border-radius: .6rem;
+    overflow: auto;
+}
+.table_body::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5em;
+}
+.table_body::-webkit-scrollbar-thumb{
+    border-radius: 0.5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+.table_body:hover:-webkit-scrollbar-thumb{
+    visibility: visible;
+}
+table{
+    width: 100%;
+}
+thead th{
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #73bcce;
+}
+tbody tr:nth-child(even){
+    background-color: #0000000b;
+}
+tbody tr:hover{
+    background-color: #fff5;
+}
+@media(max-width:1000px){
+    td:not(:first-of-type){
+        min-width: 12.1rem;
+    }
+}
+
+
+
+
+
+
+/*info*/
+.cryp{
+    background-image: url(images/background.png);
+    min-height: 50vh;
+    width: 100%;
+    background-size:cover;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.infom{   
+    color: #05161a;
+}
+
+
+
+#show-login{
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight:600 ;
+    color: #222;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #0f9ea3;
+}
+
+.popup{
+    position: absolute;
+    padding: 25px;
+    max-width: 370px;
+  width: 100%;
+    top: -50%;
+    opacity: 0;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(1.25);
+    background: #fff;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, .15);
+    transition: top 0ms ease-in-out 200ms,opacity 200ms ease-in-out 0ms,transform 20ms ease-in-out 20s;
+
+}
+.popup.active{
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
+    transition: top 0ms ease-in-out 200ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 20ms ease-in-out 20s;
+
+}
+.close-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    background: #614f4f;
+    color: #eee;
+    text-align: center;
+    line-height: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+
+/*inner container*/
+h1{
+    font-size: 22px;
+  font-weight: 600;
+  color: #0c0a0a;
+  font-family: 'Poppins', sans-serif;
+}
+p{
+    font-size: 15px;
+  font-weight: 200;
+  color: #8c8585;
+  font-family: 'Mukta', sans-serif;
+  
+}
+
+p {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  form .field {
+    margin-bottom: 20px;
+  }
+  form .input-field {
+    position: relative;
+    height: 40px;
+    width: 100%;
+  }
+  .input-field input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    padding: 0 15px;
+    border: 1px solid #fff6f6;
+  }
+  .fa-solid {
+    color: #96140b;
+  }
+  .input-field .fa-regular  {
+    position: absolute;
+    right: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #919191;
+    cursor: pointer;
+    padding: 3px;
+  }
+  .field .error {
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+    color: #d93025;
+    font-size: 13px;
+    display: none;
+  }
+  .invalid .error {
+    display: flex;
+  }
+  .error .fa-solid {
+    margin-right: 6px;
+    font-size: 15px;
+  }
+  .create-password .error {
+    align-items: flex-start;
+  }
+  .create-password .fa-solid {
+    margin-top: 4px;
+  }
+
+.button {
+    font-size: 1.3rem;
+    text-transform: capitalize;
+    letter-spacing: 1.5px;
+    padding: 6px 1.2px;
+}
+.button input {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #093b55;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button input:hover {
+  background-color: #14628d;
+}
+
+.button input:active {
+  transform: scale(0.95);
+}
+
