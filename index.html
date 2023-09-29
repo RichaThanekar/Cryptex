@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptex</title>
+    <link rel="stylesheet" href="cryptex.css">
+    <link rel="shortcut icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@300;400;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&family=PT+Serif:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  </head>
+
+<body>
+
+    <!--Header-->
+    <section class="header">
+        <nav>
+            <a href="" class="logo"><img src="images/xd.png" width="" height="50" alt="cryptex logo"></a>
+        
+        <div class="nav-links" id="navlinks">
+            <ul>
+                <li><a href="cryptex.html">HOME</a></li>
+                <li><a href="prices.html">PRICES</a></li>
+                <li><a href="">NEWS</a></li>
+                <li><a href="">WATCHLIST</a></li>
+                <li><a href="">PORTFOLIO</a></li>                
+            </ul>
+        </div>
+        <div class="login-register">
+          <ul>
+            <li>
+              <button id="show-login">Login/Register</button>
+            </li>
+          </ul>
+          <div class="popup">
+            <div class="registration">
+              <div class="close-btn">&times;</div>
+              <h1>Sign Up</h1>
+              <p>Register to track your favorite coin easily!!!</p>
+              <form action="#">
+                <div class="field username">
+                  <div class="input-field">
+                    <input type="username" placeholder="Username" class="username" />
+                  </div>
+                </div>
+                  <div class="field email-field">
+                      <div class="input-field">
+                        <input type="email" placeholder="Enter your email" class="email" />
+                      </div>
+                      <span class="error email-error">
+                          <i class="fa-solid fa-circle-exclamation"></i>
+                          <p class="error-text">Please enter a valid email</p>
+                        </span>
+                      </div>
+                  <div class="field create-password">
+                      <div class="input-field">
+                        <input type="password" placeholder="Create password" class="password" />
+                        <i class="fa-regular fa-eye-slash eyeIcon "></i>
+                      </div>
+                      <span class="error password-error">
+                      <i class="fa-solid fa-circle-exclamation"></i>
+                        <p class="error-text">
+                          Please enter atleast 8 characters with number, symbol, small and
+                          capital letter.
+                        </p>
+                      </span>
+                    </div>
+                    <div class="field confirm-password">
+                      <div class="input-field">
+                        <input type="password" placeholder="Confirm password" class="cPassword" />
+                        <i class="fa-regular fa-eye-slash eyeIcon"></i>
+                      </div>
+                      <span class="error cPassword-error">
+                          <i class="fa-solid fa-circle-exclamation"></i>
+                        <p class="error-text">Password doesn't match</p>
+                      </span>
+                    </div>
+                    <div class="input-field button">
+                      <input type="submit" value="Register" />
+                    </div>
+                    <div class="login-signup">
+                      <span class="text">Already have an account?</span>
+                      <a href="#" class="link login-link">Login</a>
+                    </div>
+              </form>
+            </div>
+          </div>
+      
+      
+      
+          <div class="popup">
+            <div class="loginpage">
+            <div class="close-btn">&times;</div>
+            <h1>Login</h1>
+            <p>Register to track your favorite coin easily!!!</p>
+            <form action="#">
+              <div class="field username">
+                <div class="input-field">
+                  <input type="username" placeholder="Username" class="username" />
+                </div>
+              </div>
+                
+                <div class="field create-password">
+                    <div class="input-field">
+                      <input type="password" placeholder="Password" class="password" />
+                      <i class="fa-regular fa-eye-slash eyeIcon "></i>
+                    </div>
+                  </div>
+                  
+                  <div class="input-field button">
+                    <input type="submit" value="Login" />
+                  </div>
+                  <div class="login-signup">
+                    <span class="text">Don't have an account?</span>
+                    <a href="" class="link signup-link">Sign up</a>
+                  </div>
+            </form>
+            </div>
+          </div>
+        </div>
+        </div>
+        </nav>
+    </section>
+
+
+
+    <!--Home page-->
+    <section class="HOME">
+        <div class="info">
+            <h1>Best Coin Price Tracker in the Market</h1>
+            <p >Gain a competitive edge tracking your holdings over time with customizable charts and watchlists, instant price alerts, and frictionless multi-exchange trading all in one place.</p>
+            <a href="login.html" class="primary">LOGIN / SIGN UP</a>
+        </div>
+        
+    </section>
+
+
+
+
+    <!--Trending Coins-->
+    
+    <section class="market"> 
+      <div class="trending">
+        Trending Coins
+      </div>
+      <div class="trending-coins">
+        <div class="coin">
+          <img src="images\coin-1.svg" width="24" height="24" alt="bitcoin logo">
+          <div class="name">Bitcoin</div>
+          <div class="value">USD 46,168.95</div>
+          <div class="1">36,641.20</div>
+          <div class="2">-0.79%</div>
+        </div>
+
+        <div class="coin">
+          <div class="logo"><img src="images\coin-2.svg" width="24" height="24" alt="bitcoin logo">Ethereum</div>
+          <div class="value">USD 46,168.95</div>
+          <div class="1">36,641.20</div>
+          <div class="2">-0.79%</div>
+        </div>
+
+        <div class="coin">
+          <div class="logo"><img src="images\coin-3.svg" width="24" height="24" alt="bitcoin logo">Tether
+              
+          </div>
+          <div class="value">USD 46,168.95</div>
+          <div class="1">36,641.20</div>
+          <div class="2">-0.79%</div>
+        </div>
+
+        <div class="coin">
+          <div class="logo"><img src="images\coin-4.svg" width="24" height="24" alt="bitcoin logo">BNB</div>
+          <div class="value">USD 46,168.95</div>
+          <div class="1">36,641.20</div>
+          <div class="2">-0.79%</div>
+        </div>
+        
+      </div>     
+    </section>
+
+
+
+    <!--cryptocurrency prices-->  
+    <section class="table_header">
+      <h1>Cryptocurrency Prices</h1>
+      <p>The global cryptocurrency market cap today is $1.08 Trillion</p>
+    </section>
+    <section class="table_body">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Coin</th>
+            <th>Price</th>
+            <th>24h</th>
+            <th>Market Cap</th>
+            <th>Last 7 days</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><img src="images\coin-1.svg" width="50" height="50" alt="">Bitcoin</td>
+            <td>$56,623.54</td>
+            <td>+1.45%</td>
+            <td>$880,423,640,582</td>
+            <td><img src="images\chart-1.svg" width="100" height="40" alt=""></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><img src="images\coin-2.svg"width="50" height="50" alt="">Ethereum</td>
+            <td>$56,623.54</td>
+            <td>-5.12%</td>
+            <td>$880,423,640,582</td>
+            <td><img src="images\chart-2.svg" width="100" height="40" alt=""></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><img src="images\coin-3.svg"width="50" height="50" alt="">Tether</td>
+            <td>$56,623.54</td>
+            <td>+1.45%</td>
+            <td>$880,423,640,582</td>
+            <td><img src="images\chart-1.svg" width="100" height="40" alt=""></td>
+            </tr>
+          <tr>
+              <td>4</td>
+              <td><img src="images\coin-4.svg"width="50" height="50" alt="">BNB</td>
+              <td>$56,623.54</td>
+              <td>-3.75%</td>
+              <td>$880,423,640,582</td>
+              <td><img src="images\chart-2.svg" width="100" height="40" alt=""></td>
+          </tr>
+            <tr>
+              <td>5</td>
+              <td><img src="images\coin-5.svg"width="50" height="50" alt="">Solana</td>
+              <td>$56,623.54</td>
+              <td>+1.45%</td>
+              <td>$880,423,640,582</td>
+              <td><img src="images\chart-2.svg" width="100" height="40" alt=""></td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td><img src="images\coin-6.svg"width="50" height="50" alt="">XRP</td>
+              <td>$56,623.54</td>
+              <td>-2.22%</td>
+              <td>$880,423,640,582</td>
+              <td><img src="images\chart-2.svg" width="100" height="40" alt=""></td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td><img src="images\coin-7.svg"width="50" height="50" alt="">Cardano</td>
+              <td>$56,623.54</td>
+              <td>+0.8%</td>
+              <td>$880,423,640,582</td>
+              <td><img src="images\chart-1.svg" width="100" height="40" alt=""></td>
+            </tr>
+          <tr>
+            <td>8</td>
+            <td><img src="images\coin-8.svg"width="50" height="50" alt="">Avalanche</td>
+            <td>$56,623.54</td>
+            <td>+1.41%</td>
+            <td>$880,423,640,582</td>
+            <td><img src="images\chart-1.svg" width="100" height="40" alt=""></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </section>
+ 
+    
+    <!--latest news-->
+    <section class="NEWS">
+      <div class="latest-news">
+        <h1>Latest News</h1>
+        <p>Find articles for anything related to the cryptocurrencies world. Get the latest news, opinions, and insights.</p>
+        <div class="news">
+          <a href="" class="news1"><img src="images\crypto1.png" width="" height="100">
+          <div>
+            <p>Bitcoin Price Prediction as Daily Trading Volume Falls Below Ethereum – Will ETH Overtake BTC?
+            </p>
+          </div>
+          </a>
+          <a href="" class="news2"><img src="images\crypto4.png" width="" height="100">
+          <div>
+            <p>Bitcoin Price Prediction as Daily Trading Volume Falls Below Ethereum – Will ETH Overtake BTC?
+            </p>
+          </div>
+          </a>
+          <a href="" class="news4"><img src="images\crypto2.png" width="" height="100">
+            <div>
+              <p>Bitcoin Price Prediction as Daily Trading Volume Falls Below Ethereum – Will ETH Overtake BTC?
+              </p>
+            </div>
+          </a>
+          
+
+        </div>
+        
+      </div>
+
+    </section>
+
+      <!--Why use cryptex?-->
+  <section class="cryp">
+    <div class="infom">
+      <h2 class="hello">A Seamless Way To Track Cryptocurrency</h2>
+      
+      <p class="hello">Working with cryptocurrencies will be easy, fast and secure.</p>
+      <br>
+      <p class="hello">Cryptex is the perfect starting point for beginners interested in cryptocurrency. 
+        It provides a user-friendly experience with real-time price data, latest-news, and a supportive community. 
+        Whether you want to track Bitcoin, Ethereum, or any other cryptocurrency, Cryptex is the easiest way to get started. 
+        Start your crypto journey today with Cryptex!</p></div>
+    
+  </section>
+
+    
+
+   <!--Footer-->
+    <footer>
+      <div class="row">
+        <div class="col">
+          <img src="images\logo.svg" class="logo">
+          <p>
+            Cryptex provides a fundamental analysis of the crypto market. In addition to tracking price, volume and market capitalisation, Cryptex tracks community growth, major events and on-chain metrics.
+          </p>
+        </div>
+        <div class="col1">
+          <h3>Menu</h3>
+          <p>Coins</p>
+          <p>Overview</p>
+          <p>Trending</p>
+          <p>API</p>
+          <p>Compare</p><br>
+          <h2>Contact us</h2>
+          <p class="email-id">cryptexapsit123@gmail.com</p>
+          <h4>+91-7045649828</h4>
+        </div>
+        <div class="col2">
+          <h3>Links</h3>
+          <ul>
+            <li><a href="">HOME</a></li>
+            <li><a href="">SERVICES</a></li>
+            <li><a href="">ABOUT US</a></li>
+            <li><a href="">FEATURES</a></li>
+          </ul>
+        </div>
+        <div class="col"></div>
+      </div>
+
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>
