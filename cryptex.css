@@ -161,7 +161,7 @@ body {
 
 .trending-coins {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-content: center;
     padding: 20px;
 }
@@ -169,6 +169,7 @@ body {
 
 .logo{
     display: flex;
+    flex-direction: row;
     margin: 0px 0px 0px;
     padding: 0px 0px 0px;
 }
@@ -375,42 +376,55 @@ tbody tr:hover{
     color: #05161a;
 }
 
+/*login-signup page*/
 
 
 #show-login{
+    transition: all .5s ease;
     padding: 10px 20px;
-    font-size: 13px;
+    font-size: 15px;
     font-weight:600 ;
     color: #222;
     border: none;
     outline: none;
     cursor: pointer;
     border-radius: 5px;
-    background-color: #0f9ea3;
+}
+#show-login:hover{
+    color: #05161a;
+    background-color: #0c7073;
 }
 
-.popup{
-    position: absolute;
-    padding: 25px;
-    max-width: 370px;
+.popup {
+  position: fixed;
+  max-width: 320px;
   width: 100%;
-    top: -50%;
-    opacity: 0;
-    left: 50%;
-    transform: translate(-50%,-50%) scale(1.25);
-    background: #fff;
-    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, .15);
-    transition: top 0ms ease-in-out 200ms,opacity 200ms ease-in-out 0ms,transform 20ms ease-in-out 1s;
-
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+  z-index: 101;
+  background: #ffffff;
+  padding: 25px;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow: rgba(7, 7, 7, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease-out;
 }
-.popup.active{
-    top: 50%;
-    opacity: 1;
-    transform: translate(-50%,-50%) scale(1);
-    transition: top 0ms ease-in-out 200ms,
-                opacity 200ms ease-in-out 0ms,
-                transform 20ms ease-in-out 1s;
-
+.popup.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+.registration {
+  display: none;
+}
+.form_container.active .registration{
+  display: block;
+}
+.form_container.active .loginpage{
+  display: none;
 }
 .close-btn{
     position: absolute;
@@ -418,26 +432,33 @@ tbody tr:hover{
     right: 10px;
     width: 15px;
     height: 15px;
-    background: #614f4f;
+    background: #888;
     color: #eee;
     text-align: center;
     line-height: 15px;
     border-radius: 15px;
     cursor: pointer;
 }
-
+.popup.show-signup .popup.signup{
+  opacity: 1;
+  pointer-events: auto;
+}
+.popup.show-signup .popup.login{
+  opacity: 0;
+  pointer-events: none;
+}
 
 /*inner container*/
 h1{
     font-size: 22px;
   font-weight: 600;
-  color: #0c0a0a;
+  color: #333;
   font-family: 'Poppins', sans-serif;
 }
 p{
     font-size: 15px;
   font-weight: 200;
-  color: #8c8585;
+  color: #333;
   font-family: 'Mukta', sans-serif;
   
 }
@@ -513,8 +534,39 @@ p {
   transition: all 0.3s ease;
 }
 .button input:hover {
-  background-color: #14628d;
+  background-color: #a1d8f5;
 }
+
+.button input:active {
+  transform: scale(0.95);
+}
+
+
+.login-signup{
+    margin-top: 10px;
+    margin-bottom: 20px;
+  text-align: center;
+ 
+  
+}
+.error-text{
+    font-size: 12px;
+}
+
+
+
+
+
+.popup a {
+  color: #7d2ae8;
+  font-size: 18px;
+}
+.popup a:hover {
+  text-decoration: underline;
+}
+
+
+
 
 .button input:active {
   transform: scale(0.95);
