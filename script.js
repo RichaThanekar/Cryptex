@@ -6,12 +6,12 @@ document.querySelector(".popup .close-btn").addEventListener("click",function(){
 });
 
 
-
-
-
-
-
-
+document.querySelector("#show-login").addEventListener("click",function(){
+	document.querySelector(".popup").classList.add("active");
+});
+document.querySelector(".popup .close-btn").addEventListener("click",function(){
+	document.querySelector(".popup").classList.remove("active");
+});
 
 const form = document.querySelector("form"),
   emailField = form.querySelector(".email-field"),
@@ -20,6 +20,7 @@ const form = document.querySelector("form"),
   passInput = passField.querySelector(".password"),
   cPassField = form.querySelector(".confirm-password"),
   cPassInput = cPassField.querySelector(".cPassword");
+  
 
 // Email Validtion
 function checkEmail() {
@@ -29,21 +30,6 @@ function checkEmail() {
   }
   emailField.classList.remove("invalid"); //removing invalid class if email value matched with emaiPattern
 }
-
-// Hide and show password
-const eyeIcons = document.querySelectorAll(".show-hide");
-
-eyeIcons.forEach((eyeIcon) => {
-  eyeIcon.addEventListener("click", () => {
-    const pInput = eyeIcon.parentElement.querySelector("input"); //getting parent element of eye icon and selecting the password input
-    if (pInput.type === "password") {
-      eyeIcon.classList.replace("bx-hide", "bx-show");
-      return (pInput.type = "text");
-    }
-    eyeIcon.classList.replace("bx-show", "bx-hide");
-    pInput.type = "password";
-  });
-});
 
 // Password Validation
 function createPass() {
@@ -83,3 +69,30 @@ form.addEventListener("submit", (e) => {
     location.href = form.getAttribute("action");
   }
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const signupPage = document.querySelector(".registration");
+  const loginPage = document.querySelector(".loginpage");
+  const signupLink = document.querySelector(".signup");
+  const loginLink = document.querySelector(".login");
+
+  signupLink.addEventListener("click", function (e) {
+    e.preventDefault();
+    signupPage.style.display = "block";
+    loginPage.style.display = "none";
+  });
+
+  loginLink.addEventListener("click", function (e) {
+    e.preventDefault();
+    signupPage.style.display = "none";
+    loginPage.style.display = "block";
+  });
+});
+
+
+
+
+
+
+
