@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="prices.css">
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+
+    <title>Prices</title>
+    <style>
+        .table table-bordered{
+            margin-top: 90px
+        }
+    </style>
 </head>
 <body>
     <!--Header-->
@@ -13,14 +22,34 @@
         
         <div class="nav-links" id="navlinks">
             <ul>
-                <li><a href="index.html">HOME</a></li>
+                <li><a href="cryptex.html">HOME</a></li>
                 <li><a href="prices.html">PRICES</a></li>
+                <li><a href="">BLOG</a></li>
                 <li><a href="">NEWS</a></li>
-                <li><a href="">WATCHLIST</a></li>
-                <li><a href="">PORTFOLIO</a></li>                
+                <li><a href="">CONTACT US</a></li>
+                
             </ul>
+           
         </div>
         </nav>
     </section>
+
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Rank</th>
+            <th scope="col">Btc Price</th>
+            <th scope="col">Tier</th>
+            <th scope="col">Price</th>
+            <th scope="col">24h</th>
+            <th scope="col">Symbol</th>
+    
+          </tr>
+        </thead>
+        <tbody id="data">
+        </tbody>
+      </table>
+      <script src="prices.js"></script>
 </body>
 </html>
