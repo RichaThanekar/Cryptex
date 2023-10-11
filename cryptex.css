@@ -207,55 +207,102 @@ body {
 
 
 /*Footer*/
-footer{
+.footer{
     width: 100%;
-    position: absolute;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
     background: linear-gradient(to right, #05161a, #0f434f);
     color: #fff;
-    padding: 100px 0 30px;
-    
+    padding: 0;
+    min-height: 300px;
     font-size: 13px;
     line-height: 20px;
 }
-.row{
-    width: 85%;
-    margin: auto;
+.logo1{
+    width: 150px;
+    
+}
+.container{
+    margin: 0 auto;
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.row{
+    display: flex;
     justify-content: space-between;
+    align-items: center;
+    
 }
+ #information{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+ }
 .col{
-    flex-basis: 25%;
-    padding: 10px;
-    justify-content: right;
-
+    min-width: 250px;
+    color: #0c7073;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
-.logo{
-    width: 80px;
-    margin-bottom: 30px;
-}
-.col h3{
-    width: fit-content;
-    margin-bottom: 40px;
+.col h4{
+    color: #ffffff;
+    padding-top: 20px;
+    margin-bottom: 10px;
     position: relative;
+    cursor: pointer;
+    font-family: 'PT Serif', serif;
+    letter-spacing: 1.5px;
 }
-.email-id{
-    width: fit-content;
-    border-bottom: 1px solid #ccc;
-    margin: 20px 0;
+.col h4::after{
+    content: '';
+    width: 0px;
+    height:2px;
+    background: #0c7073;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.2s;
 }
-ul li{
-    list-style: none;
-    margin-bottom: 12px;
+.col h4:hover::after{
+    width: 50px;
 }
-ul li a{
+.col .linked a{
+    display: block;
     text-decoration: none;
-    color: #fff;
+    color: #c8fdff;
+    margin-bottom: 5px;
+    
+    position: relative;
+    transition: 0.3s ease;
+}
+.col .linked a::before{
+    content: '';
+    height: 16px;
+    width: 3px;
+    position: absolute;
+    top: 5px;
+    left: -10px;
+    background-color: #1d92d1;
+    transition: 0.5s ease;
+    opacity: 0;
+}
+.col .linked a:hover::before{
+    opacity: 1;
+}
+.col .linked a:hover{
+    transform: translateX(-8px);
+    color: #3bb6d4;
 }
 
+
+.container p{
+    color: #3bb6d4;
+    width: 90%;
+    text-align: center;
+}
 
 
 
