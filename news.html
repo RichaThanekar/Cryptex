@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="prices.css">
+    <link rel="shortcut icon" href="./images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+
+    <title>Prices</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #eef8ff;
+}
+
+
+
+.header{
+    background:linear-gradient(to right, #05161a,#0f434f);
+    height: 80px;
+    
+}
+.logo{
+    margin-right: 5%;
+}
+nav{
+    display: flex;
+    padding: 1% 1%;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,0,0,0.2);  
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: 'Raleway', sans-serif;
+}
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height:2px;
+    background: #0c7073;
+    display: block;
+    margin: auto;
+    transition: 0.2s;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+.primary{
+    transition: all .5s ease;
+    color: #fff;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'PT Serif', serif;
+    text-transform: uppercase;
+    line-height: 1;
+    font-size: 15px;
+    background-color : transparent;
+    padding: 10px;
+    outline: none;
+    text-decoration: none;
+    border: 1px solid ;
+    border-radius: 4rem;       
+}
+.primary:hover {
+    color: #001F3F;
+    background-color: #fff;
+}
+
+.logo{
+    align-items: center;
+}
+.main {
+    text-align: center;
+    margin: 2rem;
+}
+
+.news-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1rem;
+}
+
+.news-article {
+    width: 30%;
+    padding: 1rem;
+    margin: 0.5rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.news-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.news-description {
+    font-size: 14px;
+}
+    </style>
+</head>
+<body>
+    <!--Header-->
+    <section class="header">
+        <nav>
+            <a href="" class="logo"><img src="./images/xd.png" width="" height="50" alt="cryptex logo"></a>
+        
+        <div class="nav-links" id="navlinks">
+            <ul>
+                <li><a href="cryptex.html">HOME</a></li>
+                <li><a href="prices.html">PRICES</a></li>
+                <li><a href="">BLOG</a></li>
+                <li><a href="">NEWS</a></li>
+                <li><a href="">CONTACT US</a></li>
+                
+            </ul>
+           
+        </div>
+        </nav>
+    </section>
+  <main>
+        <div id="news-container" class="news-container">
+            <!-- News articles will be displayed here -->
+        </div>
+    </main>
+    <script >
+        const apiKey = '989ab95eecf142abb958c2b5843c59f1'; 
+const apiUrl = 'https://newsapi.org/v2/everything?q=crypto&apiKey=' + apiKey;
+
+function fetchCryptoNews() {
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            const newsContainer = document.getElementById('news-container');
+
+            data.articles.forEach(article => {
+                const articleElement = document.createElement('div');
+                articleElement.className = 'news-article';
+
+                const titleElement = document.createElement('div');
+                titleElement.className = 'news-title';
+                titleElement.textContent = article.title;
+
+                const descriptionElement = document.createElement('div');
+                descriptionElement.className = 'news-description';
+                descriptionElement.textContent = article.description;
+
+                articleElement.appendChild(titleElement);
+                articleElement.appendChild(descriptionElement);
+
+                newsContainer.appendChild(articleElement);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching cryptocurrency news:', error);
+        });
+}
+
+// Call the function to fetch and display cryptocurrency news.
+fetchCryptoNews();
+    </script>
+</body>
+</html>
