@@ -1,43 +1,33 @@
-var baseUrl = "https://api.coinranking.com/v2/coins";
-var proxyUrl = "https://cors-anywhere.herokuapp.com/";
-var apiKey = "coinranking7783c58a26d99a23eff8fd53f6f9ef018215b9d93b6b1efe";
+const apiUrl = 'https://api.coingecko.com/api/v3/coins/markets';
+const params = {
+    vs_currency: 'inr',
+    per_page: 100, // Adjust the number of cryptocurrencies per page as needed
+    page: 1, // Adjust the page number if you want to paginate the results
+};
 
-var apiUrl = `${proxyUrl}${baseUrl}`;
-console.log(apiUrl);
+async function fetchCryptoData() {
+    try {
+        const response = await fetch(`${apiUrl}?${new URLSearchParams(params)}`);
+        const data = await response.json();
 
-fetch(`${proxyUrl}${baseUrl}`, { 
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-My-Custom-Header': `${apiKey}`,
-      'Access-Control-Allow-Origin': "*"
-    }
-})
-  .then((response) => {
-    if (response.ok) {
-      response.json().then((json) => {
-        console.log(json.data);
-        let coinsData = json.data.coins;
+        const cryptoTable = document.getElementById('crypto-data');
 
-        if (coinsData.length > 0) {
-          var cryptoCoin = "";
-        }
-        //For Loop Starts
-        coinsData.forEach((coin) => {
-          cryptoCoin += "<tr>";
-          cryptoCoin += `<td> ${coin.name}</td>`;
-          cryptoCoin += `<td> ${coin.rank}</td>`;
-          cryptoCoin += `<td> ${coin.btcPrice} </td>`;
-          cryptoCoin += `<td> ${coin.tier} </td>`;
-          cryptoCoin += `<td> $${Math.round(coin.price)} Billion</td>`;
-          cryptoCoin += `<td> ${coin.timePeriod} </td>`;
-          cryptoCoin += `<td> ${coin.symbol}</td>`;"<tr>";
+        data.forEach(crypto => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td><img src="${crypto.image}" alt="${crypto.name} Logo" width="32"></td>
+                <td>${crypto.name}</td>
+                <td>${crypto.market_cap_rank}</td>
+                <td>${crypto.current_price} BTC</td>
+                <td>${crypto.market_cap_rank}</td>
+                <td>Rs.${crypto.current_price}</td>
+                <td>${crypto.price_change_percentage_24h.toFixed(2)}%</td>
+            `;
+            cryptoTable.appendChild(row);
         });
-        //For Loop Ends
-        document.getElementById("data").innerHTML = cryptoCoin;
-      });
+    } catch (error) {
+        console.error('Error fetching cryptocurrency data:', error);
     }
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+}
+
+fetchCryptoData();
