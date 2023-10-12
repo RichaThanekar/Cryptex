@@ -203,49 +203,8 @@
             <th>Market Cap</th>
             <th>Last 7 days</th>
           </tr>
-        </thead>
-        <tbody>
-          <tr>
-              <td>1</td>
-              <td><img src="images/coin-1.svg" width="50" height="50" alt="">Bitcoin</td>
-              <td id="bitcoin-price">$0.00</td>
-              <td id="bitcoin-percent">0.00%</td>
-              <td id="bitcoin-market-cap">$0.00</td>
-              <td><img src="" alt="" id="bitcoin-chart" width="100" height="40"></td>
-          </tr>
-          <tr>
-              <td>2</td>
-              <td><img src="images/coin-2.svg" width="50" height="50" alt="">Ethereum</td>
-              <td id="ethereum-price">$0.00</td>
-              <td id="ethereum-percent">0.00%</td>
-              <td id="ethereum-market-cap">$0.00</td>
-              <td><img src="" alt="" id="ethereum-chart" width="100" height="40"></td>
-          </tr>
-          <tr>
-              <td>3</td>
-              <td><img src="images/coin-3.svg" width="50" height="50" alt="">Tether</td>
-              <td id="tether-price">$0.00</td>
-              <td id="tether-percent">0.00%</td>
-              <td id="tether-market-cap">$0.00</td>
-              <td><img src="" alt="" id="tether-chart" width="100" height="40"></td>
-          </tr>
-          <tr>
-              <td>4</td>
-              <td><img src="images/coin-5.svg" width="50" height="50" alt="">Solana</td>
-              <td id="solana-price">$0.00</td>
-              <td id="solana-percent">0.00%</td>
-              <td id="solana-market-cap">$0.00</td>
-              <td><img src="" alt="" id="solana-chart" width="100" height="40"></td>
-          </tr>
-          <tr>
-              <td>5</td>
-              <td><img src="images/coin-7.svg" width="50" height="50" alt="">Cardano</td>
-              <td id="cardano-price">$0.00</td>
-              <td id="cardano-percent">0.00%</td>
-              <td id="cardano-market-cap">$0.00</td>
-              <td><img src="" alt="" id="cardano-chart" width="100" height="40"></td>
-          </tr>
-      </tbody>
+        </thead id="crypto">
+          <tbody id="crypto-table"> </tbody>
       
       </table>
     </section>
@@ -362,125 +321,43 @@
                 btc.innerHTML = response.bitcoin.usd;
                 eth.innerHTML = response.ethereum.usd;
                 usdt.innerHTML = response.tether.usd;
-                sol.innerHTML = response.solana.usd;
+                solana.innerHTML = response.solana.usd;
 
             });
     </script>
+    
     <script>
-      $(document).ready(function() {
-    var cryptoIds = ["bitcoin", "ethereum", "tether", "bnb", "solana", "xrp", "cardano", "avax"];
-    var liveprice = {
-        "async": true,
-        "crossDomain": true,
-        "url": "https://api.coingecko.com/api/v3/simple/price?ids=" + cryptoIds.join("%2C") + "&vs_currencies=usd",
-        "method": "GET",
-        "headers": {}
-    }
+      const apiUrl = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=5&page=1';
 
-    $.ajax(liveprice).done(function (response) {
-        for (var i = 0; i < cryptoIds.length; i++) {
-            var cryptoId = cryptoIds[i];
-            if (response[cryptoId]) {
-                var cryptoData = response[cryptoId];
-                var priceElement = $("#" + cryptoId + "-price");
-                var percentChangeElement = $("#" + cryptoId + "-percent");
-                var marketCapElement = $("#" + cryptoId + "-market-cap");
+function displayTop5CryptoData() {
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            const cryptoTable = document.getElementById('crypto-table');
 
-                // Update Price
-                priceElement.text("$" + cryptoData.usd);
-
-                // Update Percent Change
-                percentChangeElement.text(cryptoData.usd_change_percentage_24h + "%");
-
-                // Update Market Cap
-                marketCapElement.text("$" + cryptoData.usd_market_cap);
-            }
-            else {
-                console.log("Data for " + cryptoId + " is not available.");
-            }
-        }
-    });
-});
-
-    </script>
-    <script>
-      $(document).ready(function() {
-    var cryptoIds = ["bitcoin", "ethereum", "tether", "bnb", "solana", "xrp", "cardano", "avax"];
-    var liveprice = {
-        "async": true,
-        "crossDomain": true,
-        "url": "https://api.coingecko.com/api/v3/simple/price?ids=" + cryptoIds.join("%2C") + "&vs_currencies=usd",
-        "method": "GET",
-        "headers": {}
-    }
-
-    var sparklineUrls = {
-        "bitcoin": "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=7",
-        "ethereum": "https://api.coingecko.com/api/v3/coins/ethereum/market_chart?vs_currency=usd&days=7",
-        "tether": "https://api.coingecko.com/api/v3/coins/tether/market_chart?vs_currency=usd&days=7",
-        "bnb": "https://api.coingecko.com/api/v3/coins/binancecoin/market_chart?vs_currency=usd&days=7",
-        "solana": "https://api.coingecko.com/api/v3/coins/solana/market_chart?vs_currency=usd&days=7",
-        "cardano": "https://api.coingecko.com/api/v3/coins/cardano/market_chart?vs_currency=usd&days=7",
-        "avalanche": "https://api.coingecko.com/api/v3/coins/avalanche-2/market_chart?vs_currency=usd&days=7"
-    };
-
-    $.ajax(liveprice).done(function (response) {
-        for (var i = 0; i < cryptoIds.length; i++) {
-            var cryptoId = cryptoIds[i];
-            if (response[cryptoId]) {
-                var cryptoData = response[cryptoId];
-                var priceElement = $("#" + cryptoId + "-price");
-                var percentChangeElement = $("#" + cryptoId + "-percent");
-                var marketCapElement = $("#" + cryptoId + "-market-cap");
-
-                // Update Price
-                priceElement.text("$" + cryptoData.usd);
-
-                // Update Percent Change
-                percentChangeElement.text(cryptoData.usd_change_percentage_24h + "%");
-
-                // Update Market Cap
-                marketCapElement.text("$" + cryptoData.usd_market_cap);
-
-                // Fetch and display 7-day market chart
-                fetchSparklineData(sparklineUrls[cryptoId], cryptoId + "-chart");
-            }
-            else {
-                console.log("Data for " + cryptoId + " is not available.");
-            }
-        }
-    });
-
-    function fetchSparklineData(url, chartElementId) {
-        $.ajax({
-            "async": true,
-            "crossDomain": true,
-            "url": url,
-            "method": "GET",
-            "headers": {}
-        }).done(function (response) {
-            var prices = response.prices.map(function (item) {
-                return item[1]; // Extract the price values
+            data.forEach(crypto => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${crypto.market_cap_rank}</td>
+                    <td><img src="${crypto.image}" alt="${crypto.name}" /></td>
+                    <td>${crypto.name}</td>
+                    <td>${crypto.current_price} INR</td>
+                    <td>${crypto.price_change_percentage_24h}%</td>
+                    <td>${crypto.market_cap} INR</td>
+                `;
+                cryptoTable.appendChild(row);
             });
-
-            // Use a charting library or create a custom chart display here
-            // For simplicity, let's assume you have an img element with the ID "chartElementId" to display the chart
-            var chartElement = $("#" + chartElementId);
-            chartElement.attr("src", generateChartImageUrl(prices));
+        })
+        .catch(error => {
+            console.error('Error fetching cryptocurrency data:', error);
         });
-    }
+}
 
-    // Replace this function with your charting library or logic to generate chart images
-    function generateChartImageUrl(prices) {
-        // You can use a charting library like Chart.js or plotly.js to create charts and return an image URL
-        // For simplicity, let's assume you have a function to generate chart images
-        // Replace the following line with the actual logic to generate and return the chart image URL
-        return "example-chart-image-url.png";
-    }
-});
+// Call the function to display data for the top 5 cryptocurrencies.
+displayTop5CryptoData();
+
 
     </script>
-
     <script src="script.js"></script>
 </body>
 </html>
