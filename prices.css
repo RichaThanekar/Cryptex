@@ -25,6 +25,10 @@ nav{
     background: rgba(0,0,0,0.2);  
 }
 
+.table table-bordered{
+            margin-top: 90px;
+        }  
+
 .nav-links{
     flex: 1;
     text-align: center;
