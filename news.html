@@ -138,36 +138,40 @@ nav{
         </nav>
     </section>
   <main>
-        <div id="news-container" class="news-container">
+        <ul id="news-list" class="news-list">
             <!-- News articles will be displayed here -->
-        </div>
+        </ul>
     </main>
     <script >
-        const apiKey = '989ab95eecf142abb958c2b5843c59f1'; 
-const apiUrl = 'https://newsapi.org/v2/everything?q=crypto&apiKey=' + apiKey;
+      const rssFeedUrl = 'https://www.coindesk.com/feed';
 
 function fetchCryptoNews() {
-    fetch(apiUrl)
+    const newsList = document.getElementById('news-list');
+
+    fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssFeedUrl))
         .then(response => response.json())
         .then(data => {
-            const newsContainer = document.getElementById('news-container');
+            const items = data.items;
 
-            data.articles.forEach(article => {
-                const articleElement = document.createElement('div');
-                articleElement.className = 'news-article';
+            items.forEach(item => {
+                const title = item.title;
+                const description = item.description;
+
+                const newsItem = document.createElement('li');
+                newsItem.className = 'news-item';
 
                 const titleElement = document.createElement('div');
                 titleElement.className = 'news-title';
-                titleElement.textContent = article.title;
+                titleElement.textContent = title;
 
                 const descriptionElement = document.createElement('div');
                 descriptionElement.className = 'news-description';
-                descriptionElement.textContent = article.description;
+                descriptionElement.textContent = description;
 
-                articleElement.appendChild(titleElement);
-                articleElement.appendChild(descriptionElement);
+                newsItem.appendChild(titleElement);
+                newsItem.appendChild(descriptionElement);
 
-                newsContainer.appendChild(articleElement);
+                newsList.appendChild(newsItem);
             });
         })
         .catch(error => {
@@ -177,6 +181,9 @@ function fetchCryptoNews() {
 
 // Call the function to fetch and display cryptocurrency news.
 fetchCryptoNews();
+
+
+
     </script>
 </body>
 </html>
