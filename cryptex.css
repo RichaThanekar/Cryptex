@@ -191,21 +191,6 @@ body {
 }
 
 
-/* Optional: Add a scrollbar */
-.trending-coins::-webkit-scrollbar {
-    height: 8px;
-}
-
-.trending-coins::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 4px;
-}
-.value{
-    align-items: flex-end;
-}
-
-
-
 /*Footer*/
 .footer{
     width: 100%;
@@ -307,11 +292,22 @@ body {
 
 
 /*Latest news*/
-.latest-news{
+.latest-news {
     background-color:#001F3F;
     text-align: center;
     font-family: 'Kanit', sans-serif;
-    color: white;
+    color: rgb(244, 244, 244);
+    color: whitesmoke;
+}
+.latest-news h1 {
+    color: floralwhite;
+    padding-top: 20px;
+}
+.latest-news h2{
+    font-family: 'Poppins', sans-serif;
+    color: floralwhite;
+    font-size: 15px;
+    padding: 10px;
     
 }
 .news{
@@ -330,6 +326,7 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 .latest-news p{
+    color:floralwhite;
     padding: 10px;
 }
 
