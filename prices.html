@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
 
     <title>Prices</title>
+    <style>
+        .table table-bordered{
+            margin-top: 90px
+        }
+    </style>
 </head>
 <body>
     <!--Header-->
@@ -17,10 +22,11 @@
         
         <div class="nav-links" id="navlinks">
             <ul>
-                <li><a href="index.html">HOME</a></li>
+                <li><a href="cryptex.html">HOME</a></li>
                 <li><a href="prices.html">PRICES</a></li>
+                <li><a href="">BLOG</a></li>
                 <li><a href="">NEWS</a></li>
-                <li><a href=""> WATCHLIST</a></li>
+                <li><a href="">CONTACT US</a></li>
                 
             </ul>
            
@@ -44,6 +50,10 @@
         <tbody id="crypto-data">
         </tbody>
       </table>
+      <div class="pagination">
+        <button id="prevPage">Previous Page</button>
+        <button id="nextPage">Next Page</button>
+    </div>
       <script src="prices.js"></script>
 </body>
 </html>
