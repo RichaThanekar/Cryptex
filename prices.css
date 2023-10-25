@@ -76,3 +76,7 @@ nav{
     color: #001F3F;
     background-color: #fff;
 }
+.pagination{
+    display: flex;
+    justify-content: center;
+}

@@ -302,6 +302,20 @@ body {
 .latest-news h1 {
     color: floralwhite;
     padding-top: 20px;
+    text-decoration: none;
+
+}
+.latest-news h1::after{
+    content: '';
+    width: 0%;
+    height:2px;
+    background: #0c7073;
+    display: block;
+    margin: auto;
+    transition: 0.2s;
+}
+.latest-news h1:hover::after{
+    width: 20%;
 }
 .latest-news h2{
     font-family: 'Poppins', sans-serif;
