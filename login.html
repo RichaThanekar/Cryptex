@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Login Page</title>
+    <link rel="shortcut icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@300;400;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&family=PT+Serif:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+</head>
+<body>
+  
+  <video autoplay muted loop id="myVideo">
+    <source src="bgvdo.mp4" type="video/mp4">
+  </video>
+    <div class="container">
+        
+            <div class="registration">
+                <form action="#">
+                  <h1>Log In</h1>
+                <p>Get Ready to track your favorite coin easily!!!</p>
+                  <div class="field username">
+                    <div class="input-field">
+                      <input type="username" placeholder="Username" class="username" />
+                    </div>
+                  </div>
+                    <div class="field create-password">
+                        <div class="input-field">
+                          <input type="password" placeholder="Password" class="password" />
+                          
+                        </div>
+                        <span class="error password-error">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                          <p class="error-text">
+                            Please enter atleast 8 characters with number, symbol, small and
+                            capital letter.
+                          </p>
+                        </span>
+                      </div>
+                   
+                      <div class="input-field button">
+                        <input type="submit" value="LOGIN" />
+                      </div>
+                      <div class="login_signup">Don't have an account? <a href="#" class="login">Register</a></div>
+        
+                </form>
+              </div>
+            
+        </form>
+    </div>
+    <script>
+      // Add an event listener to the registration form
+      document.querySelector("form").addEventListener("submit", function (event) {
+          // Prevent the form from actually submitting
+          event.preventDefault();
+          
+          // Redirect to the home page (change the URL to your home page URL)
+          window.location.href = "home.html";
+      });
+  </script>
+  
+</body>
+
+</html>
