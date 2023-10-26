@@ -8,30 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
 
     <title>Prices</title>
-    <style>
-        .table table-bordered{
-            margin-top: 90px
-        }
-
-        .search{
-            margin: 20px;
-            justify-content: center;
-        }
-
-        #crypto-search{
-            width: 400px;
-            border-radius: 10px;
-            padding: 5px;
-        }
-
-        #search-button{
-            color: white;
-            background-color: #1a768a;
-            width: fit-content;
-            padding: 5px;
-            border-radius: 10px;
-        }
-    </style>
+    
 </head>
 <body>
     <!--Header-->
@@ -39,19 +16,16 @@
         <nav>
             <a href="" class="logo"><img src="./images/xd.png" width="" height="50" alt="cryptex logo"></a>
         
-        <div class="nav-links" id="navlinks">
-            <ul>
-                <li><a href="cryptex.html">HOME</a></li>
-                <li><a href="prices.html">PRICES</a></li>
-                <li><a href="">BLOG</a></li>
-                <li><a href="">NEWS</a></li>
-                <li><a href="">CONTACT US</a></li>
-                
-            </ul>
-           
-        </div>
+            <div class="nav-links" id="navlinks">
+                <ul>
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="prices.html">PRICES</a></li>
+                    <li><a href="news.html">NEWS</a></li>               
+                </ul>
+            </div>
         </nav>
     </section>
+
 
      <div class="search">
         <input type="text" id="crypto-search" placeholder="Search for a cryptocurrency">
@@ -79,6 +53,46 @@
         <button id="nextPage">Next Page</button>
     </div>
       <script src="prices.js"></script>
+      <div class="footer">
+        <div class="container">
+              <div class="row">
+                <div class="col" id="information">
+                  <img src="images\xd.png" class="logo1">
+                  <p>Cryptex provides a fundamental analysis of the crypto market. In addition to tracking price, volume and market capitalisation, Cryptex tracks community growth, major events and on-chain metrics.</p>
+      
+                </div>
+            <div class="col" id="Services">
+              <h4>Services</h4>
+              <div class="linked">
+                <a href="#">Coins</a>
+                <a href="#">Overview</a>
+                <a href="#">Trending</a>
+                <a href="#">API</a>
+                <a href="#">Compare</a>
+            </div>
+            </div>
+            <div class="col" id="Links">
+              <h4>Links</h4>
+              <div class="linked">
+                <a href="#">Home</a>
+                <a href="#">Prices</a>
+                <a href="#">Watchlist</a>
+                <a href="#">News</a>
+              </div>
+            </div>
+            <div class="col" id="Contact Us">
+              <h4>Contact Us</h4>
+              <div class="contact-details">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <p>cryptex@gmail.com</p>
+               
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <p>+91-595318359</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 </body>
 <script>
 const searchInput = document.getElementById('crypto-search');

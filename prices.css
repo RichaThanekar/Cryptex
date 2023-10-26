@@ -25,12 +25,9 @@ nav{
     background: rgba(0,0,0,0.2);  
 }
 
-.table table-bordered{
-            margin-top: 90px;
-        }  
+
 
 .nav-links{
-    flex: 1;
     text-align: center;
 }
 .nav-links ul li{
@@ -79,4 +76,219 @@ nav{
 .pagination{
     display: flex;
     justify-content: center;
+    margin-bottom:20px;
+}
+
+
+
+.table_header{
+    background-color: #aeebed;
+    font-family: 'Kanit', sans-serif;
+    line-height: 1.5;
+}
+
+
+
+.table_header{
+    width: 100%;
+    height: 10%;
+    background-color: #fff4;
+    padding: .8rem 1rem;
+}
+.table_body{
+    width: 95%;
+    max-height: calc(89% - 1.6rem);
+    background-color: #fffb;
+    margin:.8rem auto;
+    border-radius: .6rem;
+    overflow: auto;
+}
+thead{
+    background-color: #2aa0ba;
+}
+
+table{
+    width: 100%;
+}
+thead th{
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #73bcce;
+}
+tbody tr:nth-child(even){
+    background-color: #0000000b;
+}
+tbody tr:hover{
+    background-color: #fff5;
+}
+@media(max-width:1000px){
+    td:not(:first-of-type){
+        min-width: 12.1rem;
+    }
+}
+
+#prevPage{
+    transition: all .5s ease;
+    color:#05161a;
+    font-family: 'Merriweather', serif;
+    text-transform: uppercase;
+    line-height: 1;
+    font-size: 15px;
+    background-color : transparent;
+    padding: 10px;
+    outline: none;
+    text-decoration: none;
+    border: 1px solid ;
+    border-radius: 5px;  
+         
+}
+#prevPage:hover {
+    color: #ffffff;
+    background-color: #73bcce;
+}
+#nextPage{
+    transition: all .5s ease;
+    color:#05161a;
+    font-family: 'Merriweather', serif;
+    text-transform: uppercase;
+    line-height: 1;
+    font-size: 15px;
+    background-color : transparent;
+    padding: 10px;
+    outline: none;
+    text-decoration: none;
+    border: 1px solid ;
+    border-radius: 5px;  
+    margin-left: 30px; 
+         
+}
+#nextPage:hover {
+    color: #ffffff;
+    background-color: #73bcce;
+}
+
+
+.footer{
+    width: 100%;
+    position: relative;
+    background: linear-gradient(to right, #05161a, #0f434f);
+    color: #fff;
+    padding: 0;
+    min-height: 300px;
+    font-size: 13px;
+    line-height: 20px;
+}
+.logo1{
+    width: 150px;
+    
+}
+.container{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    
+}
+ #information{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+ }
+ #information p{
+    width: 100%;
+ }
+
+.col{
+    min-width: 250px;
+    color: #0c7073;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.col h4{
+    color: #ffffff;
+    padding-top: 20px;
+    margin-bottom: 10px;
+    position: relative;
+    cursor: pointer;
+    font-family: 'PT Serif', serif;
+    letter-spacing: 1.5px;
+    font-size: 13px;
+}
+.col h4::after{
+    content: '';
+    width: 0px;
+    height:2px;
+    background: #0c7073;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.2s;
+}
+.col h4:hover::after{
+    width: 50px;
+}
+.col .linked a{
+    display: block;
+    text-decoration: none;
+    color: #c8fdff;
+    margin-bottom: 5px;
+    
+    position: relative;
+    transition: 0.3s ease;
+}
+.col .linked a::before{
+    content: '';
+    height: 16px;
+    width: 3px;
+    position: absolute;
+    top: 5px;
+    left: -10px;
+    background-color: #1d92d1;
+    transition: 0.5s ease;
+    opacity: 0;
+}
+.col .linked a:hover::before{
+    opacity: 1;
+}
+.col .linked a:hover{
+    transform: translateX(-8px);
+    color: #3bb6d4;
+}
+
+
+.container p{
+    color: #3bb6d4;
+    width: 90%;
+    text-align: center;
+}
+.table table-bordered{
+    margin-top: 90px
+}
+
+.search{
+    margin: 20px;
+    justify-content: center;
+}
+
+#crypto-search{
+    width: 400px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#search-button{
+    color: white;
+    background-color: #1a768a;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 10px;
 }

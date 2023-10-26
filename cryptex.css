@@ -26,7 +26,7 @@ nav{
 }
 
 .nav-links{
-    flex: 1;
+    
     text-align: center;
 }
 .nav-links ul li{
@@ -52,6 +52,25 @@ nav{
 }
 .nav-links ul li:hover::after{
     width: 100%;
+}
+.primary2{
+    transition: all .5s ease;
+    color: #fff;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'PT Serif', serif;
+    text-transform: uppercase;
+    line-height: 1;
+    font-size: 15px;
+    background-color : transparent;
+    padding: 5px;
+    outline: none;
+    text-decoration: none;
+    border: 1px solid ;
+    border-radius: 4PX;       
+}
+.primary2:hover {
+    color: #001F3F;
+    background-color: #fff;
 }
 .primary{
     transition: all .5s ease;
