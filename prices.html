@@ -12,6 +12,25 @@
         .table table-bordered{
             margin-top: 90px
         }
+
+        .search{
+            margin: 20px;
+            justify-content: center;
+        }
+
+        #crypto-search{
+            width: 400px;
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+        #search-button{
+            color: white;
+            background-color: #1a768a;
+            width: fit-content;
+            padding: 5px;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
@@ -20,17 +39,24 @@
         <nav>
             <a href="" class="logo"><img src="./images/xd.png" width="" height="50" alt="cryptex logo"></a>
         
-            <div class="nav-links" id="navlinks">
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="prices.html">PRICES</a></li>
-                    <li><a href="news.html">NEWS</a></li>
-                    <li><a href="">WATCHLIST</a></li>
-                                   
-                </ul>
-            </div>
+        <div class="nav-links" id="navlinks">
+            <ul>
+                <li><a href="cryptex.html">HOME</a></li>
+                <li><a href="prices.html">PRICES</a></li>
+                <li><a href="">BLOG</a></li>
+                <li><a href="">NEWS</a></li>
+                <li><a href="">CONTACT US</a></li>
+                
+            </ul>
+           
+        </div>
         </nav>
     </section>
+
+     <div class="search">
+        <input type="text" id="crypto-search" placeholder="Search for a cryptocurrency">
+    <button id="search-button">Search</button>
+    </div>  
 
     <table class="table table-bordered">
         <thead>
@@ -54,4 +80,29 @@
     </div>
       <script src="prices.js"></script>
 </body>
+<script>
+const searchInput = document.getElementById('crypto-search');
+const searchButton = document.getElementById('search-button');
+
+function handleSearch() {
+    const searchTerm = searchInput.value.trim().toLowerCase();
+
+    const cryptoRows = document.querySelectorAll('#crypto-data tr');
+
+    cryptoRows.forEach(row => {
+        const cryptoName = row.querySelector('td:nth-child(2)').textContent.toLowerCase(); 
+
+        if (cryptoName.includes(searchTerm) || searchTerm === '') {
+            row.style.display = 'table-row'; 
+        } else {
+            row.style.display = 'none'; 
+        }
+    });
+}
+searchInput.addEventListener('input', handleSearch);
+
+searchButton.addEventListener('click', handleSearch);
+
+
+</script>
 </html>
