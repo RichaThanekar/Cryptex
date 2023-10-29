@@ -49,23 +49,15 @@
 
                 </div>
                 <span class="error password-error">
-                <i class="fa-solid fa-circle-exclamation"></i>
+                  <i class="fa-solid fa-circle-exclamation"></i>
+
                   <p class="error-text">
                     Please enter atleast 8 characters with number, symbol and
                     capital letter.
                   </p>
                 </span>
               </div>
-              <div class="field confirm-password">
-                <div class="input-field">
-                  <input type="password" placeholder="Confirm password" class="cPassword" />
-
-                </div>
-                <span class="error cPassword-error">
-                    <i class="fa-solid fa-circle-exclamation"></i>
-                  <p class="error-text">Password doesn't match</p>
-                </span>
-              </div>
+             
               <div class="input-field button">
                 <input type="submit" value="Register" />
               </div>
@@ -78,59 +70,72 @@
     </div>
     <script>
      
-     const form = document.querySelector("form"),
-  emailField = form.querySelector(".email-field"),
-  emailInput = emailField.querySelector(".email"),
-  passField = form.querySelector(".create-password"),
-  passInput = passField.querySelector(".password"),
-  cPassField = form.querySelector(".confirm-password"),
-  cPassInput = cPassField.querySelector(".cPassword");
+     const form = document.querySelector("form");
+const emailField = form.querySelector(".email-field");
+const emailInput = emailField.querySelector(".email");
+const passField = form.querySelector(".create-password");
+const passInput = passField.querySelector(".password");
+
+// Password Validation
+function createPass() {
+  console.log("createPass function called");
+  const passPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+  if (!passInput.value.match(passPattern)) {
+    console.log("Password is invalid");
+    passField.classList.add("invalid");
+    passField.querySelector(".password-error").style.display = "block";
+    return false;
+  } else {
+    console.log("Password is valid");
+    passField.classList.remove("invalid");
+    passField.querySelector(".password-error").style.display = "none";
+    return true;
+  }
+}
+
+
 
 // Email Validation
 function checkEmail() {
   const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
   if (!emailInput.value.match(emailPattern)) {
     emailField.classList.add("invalid");
+    return false;
   } else {
     emailField.classList.remove("invalid");
+    return true;
   }
 }
 
-// Password Validation
-function createPass() {
-  const passPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+// Redirect to "home.html" if both email and password are valid
+function redirectToHome() {
+  if (checkEmail() && createPass()) {
+    window.location.href = "home.html";
+  }
+}
 
-  if (!passInput.value.match(passPattern)) {
-    passField.classList.add("invalid");
-  } else {
+// Calling Functions on Input Change
+emailInput.addEventListener("input", checkEmail);
+passInput.addEventListener("input", createPass);
+
+// Remove "invalid" class when the fields are empty
+emailInput.addEventListener("input", function () {
+  if (emailInput.value === "") {
+    emailField.classList.remove("invalid");
+  }
+});
+
+passInput.addEventListener("input", function () {
+  if (passInput.value === "") {
     passField.classList.remove("invalid");
   }
-}
+});
 
-// Confirm Password Validation
-function confirmPass() {
-  if (passInput.value !== cPassInput.value || cPassInput.value === "") {
-    cPassField.classList.add("invalid");
-  } else {
-    cPassField.classList.remove("invalid");
-  }
-}
-
-// Calling Functions on Form Submit
-form.addEventListener("submit", (e) => {
+// Add an event listener to submit the form
+form.addEventListener("submit", function (e) {
   e.preventDefault(); // Prevent form submission
-
-  checkEmail();
-  createPass();
-  confirmPass();
-
-  if (
-    !emailField.classList.contains("invalid") &&
-    !passField.classList.contains("invalid") &&
-    !cPassField.classList.contains("invalid")
-  ) {
-    window.location.href = "home.html"; // Redirect to home.html
-  }
+  redirectToHome();
 });
 
   </script>
