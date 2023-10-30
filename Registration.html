@@ -45,17 +45,10 @@
                 </div>
             <div class="field create-password">
                 <div class="input-field">
-                  <input type="password" placeholder="Create password" class="password" />
+                  <input type="password" placeholder="Password" class="password" />
 
                 </div>
-                <span class="error password-error">
-                  <i class="fa-solid fa-circle-exclamation"></i>
-
-                  <p class="error-text">
-                    Please enter atleast 8 characters with number, symbol and
-                    capital letter.
-                  </p>
-                </span>
+                
               </div>
              
               <div class="input-field button">
@@ -69,74 +62,7 @@
         </form>
     </div>
     <script>
-     
-     const form = document.querySelector("form");
-const emailField = form.querySelector(".email-field");
-const emailInput = emailField.querySelector(".email");
-const passField = form.querySelector(".create-password");
-const passInput = passField.querySelector(".password");
 
-// Password Validation
-function createPass() {
-  console.log("createPass function called");
-  const passPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
-  if (!passInput.value.match(passPattern)) {
-    console.log("Password is invalid");
-    passField.classList.add("invalid");
-    passField.querySelector(".password-error").style.display = "block";
-    return false;
-  } else {
-    console.log("Password is valid");
-    passField.classList.remove("invalid");
-    passField.querySelector(".password-error").style.display = "none";
-    return true;
-  }
-}
-
-
-
-// Email Validation
-function checkEmail() {
-  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-  if (!emailInput.value.match(emailPattern)) {
-    emailField.classList.add("invalid");
-    return false;
-  } else {
-    emailField.classList.remove("invalid");
-    return true;
-  }
-}
-
-// Redirect to "home.html" if both email and password are valid
-function redirectToHome() {
-  if (checkEmail() && createPass()) {
-    window.location.href = "home.html";
-  }
-}
-
-// Calling Functions on Input Change
-emailInput.addEventListener("input", checkEmail);
-passInput.addEventListener("input", createPass);
-
-// Remove "invalid" class when the fields are empty
-emailInput.addEventListener("input", function () {
-  if (emailInput.value === "") {
-    emailField.classList.remove("invalid");
-  }
-});
-
-passInput.addEventListener("input", function () {
-  if (passInput.value === "") {
-    passField.classList.remove("invalid");
-  }
-});
-
-// Add an event listener to submit the form
-form.addEventListener("submit", function (e) {
-  e.preventDefault(); // Prevent form submission
-  redirectToHome();
-});
 
   </script>
   
